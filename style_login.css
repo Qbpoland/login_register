@@ -1,0 +1,17 @@
+#login {
+    margin: 20vh 20vw;
+    width: 40vw;
+    height: 40vh;
+    padding: 10vh 10vw;
+    text-align: center;
+}
+body {
+    background-color: gray;
+}
+#register {
+    margin: 20vh 20vw;
+    width: 40vw;
+    height: 40vh;
+    padding: 10vh 10vw;
+    text-align: center;
+}
