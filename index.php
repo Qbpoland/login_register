@@ -8,13 +8,7 @@
     <title>Logowanie</title>
 </head>
 <body>
-    <?php
-
-
-
-
-
-?>
+    
     <div id="login">
         <h1>Zaloguj się</h1>
         <form action="index.php" method="post">
