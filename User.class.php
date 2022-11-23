@@ -1,7 +1,7 @@
 <?php
 class User {
     private int $id;
-    private mysqli $db;
+    private $db;
     private string $login;
     private string $password;
     private string $firstName;
@@ -18,7 +18,7 @@ class User {
 
     public function register() : bool {
         $passwordHash = password_hash($this->password, PASSWORD_ARGON2I);
-        $query = "INSERT INTO user VALUES (NULL, ?, ?, ?, ?)";
+        $query = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?)";
         $preparedQuery = $this->db->prepare($query); 
         $preparedQuery->bind_param('ssss', $this->login, $passwordHash, 
                                             $this->firstName, $this->lastName);
@@ -27,7 +27,7 @@ class User {
     }
 
     public function login() : bool {
-        $query = "SELECT * FROM user WHERE login = ? LIMIT 1";
+        $query = "SELECT * FROM users WHERE login = ? LIMIT 1";
         $preparedQuery = $this->db->prepare($query); 
         $preparedQuery->bind_param('s', $this->login);
         $preparedQuery->execute();
